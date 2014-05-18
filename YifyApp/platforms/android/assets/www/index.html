@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="yifyApp" ng-controller="TabCtrl">
+    <ion-tabs>
+    
+    <!-- Define Tabs here -->
+    <!-- First Tab -->
+    <ion-tab title="Latest">
+      <ion-header-bar class="bar bar-header bar-stable item-icon-left item-icon-right">
+	<i class="icon ion-ios7-gear"></i>
+	<h1 class="title">Latest Movies</h1>
+	<i class="icon ion-ios7-film" ng-click="">
+	</i>
+      </ion-header-bar>
+      
+      <!-- Add come content nub! -->
+      <ion-content>
+	<div class"" ng-app="yifyApp" ng-controller="mainController" ng-init="init()">
+	  <li ng-repeat="movie in results">
+	    <div class="list card">
+		<!-- "Avatar" Movie Title and Year -->
+		<div class="item item-avatar positive">
+		  <img src="{{movie.CoverImage}}">
+		  <h2 class="positive">{{movie.MovieTitleClean}}</h2>
+		  <h3 class="positive">{{movie.MovieYear}}</p>
+		</div>
+		<!-- Descriptive + Image Card #Needs Improving - USE ROWS???? -->
+		<div class="row">
+		  <div class="item item-thumbnail">
+		    <img src="{{movie.CoverImage}}">
+		  </div>
+		    <div class="item textarea">
+		      Date Uploaded: {{movie.DateUploaded}}<br>
+		      Quality: {{movie.Quality}}<br>
+		      Genre: {{movie.Genre}}<br>
+		      Overview: Some Text we need to get from some API from around the world...<br>
+		      More text that goes with the overview of the movie<br>
+		      Moar!<br>
+		      Overview ends here<br>
+			<button class="button button-icon" ng-click="newTask()">
+			  <i class="icon ion-android-information"></i>
+			</button>
+			<!-- Download Button -->
+			<button class="button button-icon" ng-click="">
+			  <i class="icon ion-compose"></i>
+			</button>
+			<button class="button button-icon" ng-click="">
+			  <i class="icon ion-android-share"></i>
+			</button>
+		   </div>
+		</div>
+		<!-- Easy one, need to test use of Magnet Links on Android -->
+		<a class="item item-icon-left calm" href="{{movie.TorrentMagnetUrl}}">
+		  <i class="icon ion-magnet"></i>
+		  Magnet Link
+		</a>
+	    </div>
+	  </li>
+	</div>
+      </ion-content>
+    </ion-tab>
+    
+    <!-- Second Tab -->
+    <ion-tab title="Popular">
+      <ion-header-bar class="bar bar-header bar-stable item-icon-left item-icon-right">
+	<i class="icon ion-ios7-gear"></i>
+	<h1 class="title">Popular Movies</h1>
+	<i class="icon ion-ios7-film" ng-click="">
+	</i>
+      </ion-header-bar>
+      <ion-content>
+      
+      </ion-content>
+    </ion-tab>
+    
+    <!-- Third and Last Tab -->
+    <ion-tab title="Something">
+      <ion-header-bar class="bar bar-header bar-stable item-icon-left item-icon-right">
+	<i class="icon ion-ios7-gear"></i>
+	<h1 class="title">Popular Movies</h1>
+	<i class="icon ion-ios7-film" ng-click="">
+	</i>
+      </ion-header-bar>
+      <ion-content>
+      
+      </ion-content>
+    </ion-tab>
+      <script id="more-info.html" type="text/ng-template">
+  
+	<div class="modal">
+      
+	  <!-- Modal header bar -->
+	  <ion-header-bar class="bar-secondary">
+	    <h1 class="title">{{movie.MovieTitleClean}}</h1>
+	    <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+	  </ion-header-bar>
+      
+	  <!-- Modal content area -->
+	  <ion-content>
+      
+	    <form ng-submit="createTask(task)">
+	      <div class="list">
+		<label class="item item-input">
+		  <input type="text" placeholder="What do you need to do?" ng-model="task.title">
+		</label>
+	      </div>
+	      <div class="padding">
+		<button type="submit" class="button button-block button-positive">Create Task</button>
+	      </div>
+	    </form>
+      
+	  </ion-content>
+      
+	</div>
+      
+      </script>
+    </ion-tabs>
+  </body>
+</html>
