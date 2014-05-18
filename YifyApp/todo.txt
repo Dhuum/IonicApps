@@ -1,4 +1,5 @@
 -Replace Button on Header for an Icon or a better-shaped button
 -Add Refresher to Main Tab
+-Add WORKING modal for "info" link
 -Add slider side-pane (Left)
 	-Add different labels on side-pane
