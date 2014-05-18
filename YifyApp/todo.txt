@@ -3,5 +3,4 @@
 -Add WORKING modal for "info" link
 -Add slider side-pane (Left)
 	-Add different labels on side-pane
-
-*IMPORTANT* Change scope of mainController to body tag
+	
