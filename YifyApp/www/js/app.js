@@ -18,6 +18,9 @@ angular.module('yifyApp', ['ionic'])
         }).error(function(error) {
  
         });
+    $scope.share = function(result) {
+    alert('Share Item: ' + result.MovieUrl);
+        };
     };
 })
 /*
