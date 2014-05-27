@@ -6,7 +6,7 @@
 angular.module('yifyApp', ['ionic'])
 
     .controller('mainController', function ($scope, $http) {
-  // http://yts.re/api/list.json?sort=date&limit=10
+    // http://yts.re/api/list.json?sort=date&limit=10
     $scope.results = [];
     $scope.init = function () {
         //Call the API and get 10 max results sorted by Date in descending order
@@ -23,6 +23,7 @@ angular.module('yifyApp', ['ionic'])
             alert('Movie Info: ' + result.MovieTitleClean + " \n" + "Year: " + result.MovieYear + " \n" + "Quality: " +
                 result.Quality + " \n" + "Genre: " + result.Genre + "\n" + "Rating: " + result.MovieRating);
         };
+        //Probably needs an INTENT, fails to load because of hosts file blocking ads server
         $scope.download = function (result) {
             window.open(result.MovieUrl);  
         };
@@ -30,11 +31,44 @@ angular.module('yifyApp', ['ionic'])
             alert('Share Item: ' + result.MovieUrl);
         };
     };
+        $scope.tasks = [];
 })
+
+function modalController($scope, $ionicModal) {
+    // Create and load the Modal
+    $ionicModal.fromTemplateUrl('modal-info.html', function(modal) {
+        $scope.taskModal = modal;
+    }, {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+    $scope.modal = modal;
+    });
+    
+    $scope.openModal = function() {
+    $scope.modal.show();
+  };
+    $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  
+   //Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  /* // Execute action on hide modal
+  $scope.$on('modal.hide', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action 
+  }); */
+};
+
 
 function TabCtrl($scope, $ionicTabsDelegate) {
     $scope.selectTabWithIndex = function (index) {
         $ionicTabsDelegate.select(index);
     }
-}
-
+};

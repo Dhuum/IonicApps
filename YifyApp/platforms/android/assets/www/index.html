@@ -24,119 +24,115 @@
   <body ng-app="yifyApp" ng-controller="TabCtrl">
     <ion-tabs ng-app="yifyApp" ng-controller="mainController">
     
-    <!-- Define Tabs here -->
-    <!-- First Tab -->
-    <ion-tab title="Latest">
-      <ion-header-bar class="bar bar-header bar-stable item-icon-left item-icon-right">
-	<i class="icon ion-ios7-gear"></i>
-	<h1 class="title">Latest Movies</h1>
-	<i class="icon ion-ios7-film" ng-click="">
-	</i>
-      </ion-header-bar>
-      
-      <!-- Add come content nub! -->
-      <ion-content>
-	<div class"" ng-init="init()">
-	  <li ng-repeat="movie in results">
-	    <div class="list card">
-		<!-- "Avatar" Movie Title and Year -->
-		<div class="item item-avatar positive">
-		  <img src="{{movie.CoverImage}}">
-		  <h2 class="positive">{{movie.MovieTitleClean}}</h2>
-		  <h3 class="positive">{{movie.MovieYear}}</p>
-		</div>
-		
-		<!-- Descriptive + Image Card #Needs Improving - USE ROWS???? -->
-		<div class="row">
-		  <div class="item item-thumbnail">
+      <!-- Define Tabs here -->
+      <!-- First Tab -->
+      <ion-tab title="Latest">
+	<ion-header-bar class="bar bar-header bar-stable item-icon-left item-icon-right">
+	  <i class="icon ion-ios7-gear"></i>
+	  <h1 class="title">Latest Movies</h1>
+	  <i class="icon ion-ios7-film" ng-click="">
+	  </i>
+	</ion-header-bar>
+	
+	<!-- Add come content nub! -->
+	<ion-content>
+	  <div class"" ng-init="init()">
+	    <li ng-repeat="movie in results">
+	      <div class="list card">
+		  <!-- "Avatar" Movie Title and Year -->
+		  <div class="item item-avatar positive">
 		    <img src="{{movie.CoverImage}}">
+		    <h2 class="positive">{{movie.MovieTitleClean}}</h2>
+		    <h3 class="positive">{{movie.MovieYear}}</p>
 		  </div>
-		  <div class="item textarea">
-		    Date: {{movie.DateUploaded}}<br>
-		    Quality: {{movie.Quality}}<br>
-		    Genre: {{movie.Genre}}<br>
-		    Overview: Some Text...<br>
-		    More text that goes here...<br>
-		   <ion-list>
-		      <ion-item>
-			<button class="button button-icon" ng-click="info(movie)">
-			  <i class="icon ion-android-information"></i>
-			</button>
-			<button class="button button-icon" ng-click="download(movie)">
-			  <i class="icon ion-compose"></i>
-			</button>
-			<button class="button button-icon" ng-click="share(movie)">
-			  <i class="icon ion-android-share"></i>
-			</button>
-		      </ion-item>
-		    </ion-list>
+		  
+		  <!-- Descriptive + Image Card #Needs Improving - USE ROWS???? -->
+		  <div class="row">
+		    <div class="item item-thumbnail">
+		      <img src="{{movie.CoverImage}}">
+		    </div>
+		    <div class="item textarea">
+		      Date: {{movie.DateUploaded}}<br>
+		      Quality: {{movie.Quality}}<br>
+		      Genre: {{movie.Genre}}<br>
+		      Overview: Some Text...<br>
+		      More text that goes here...<br>
+		     <ion-list>
+			<ion-item>
+			  <button class="button button-icon" ng-click="openModal()">
+			    <i class="icon ion-android-information"></i>
+			  </button>
+			  <button class="button button-icon" ng-click="download(movie)">
+			    <i class="icon ion-compose"></i>
+			  </button>
+			  <button class="button button-icon" ng-click="share(movie)">
+			    <i class="icon ion-android-share"></i>
+			  </button>
+			</ion-item>
+		      </ion-list>
+		    </div>
 		  </div>
-		</div>
-		<!-- Easy one, need to test use of Magnet Links on Android -->
-		<a class="item item-icon-left calm" href="{{movie.TorrentMagnetUrl}}">
-		  <i class="icon ion-magnet"></i>
-		  Magnet Link
-		</a>
-	    </div>
-	  </li>
-	</div>
-      </ion-content>
-    </ion-tab>
-    
-    <!-- Second Tab -->
-    <ion-tab title="Popular">
-      <ion-header-bar class="bar bar-header bar-stable item-icon-left item-icon-right">
-	<i class="icon ion-ios7-gear"></i>
-	<h1 class="title">Popular Movies</h1>
-	<i class="icon ion-ios7-film" ng-click="">
-	</i>
-      </ion-header-bar>
-      <ion-content>
-      
-      </ion-content>
-    </ion-tab>
-    
-    <!-- Third and Last Tab -->
-    <ion-tab title="Something">
-      <ion-header-bar class="bar bar-header bar-stable item-icon-left item-icon-right">
-	<i class="icon ion-ios7-gear"></i>
-	<h1 class="title">Popular Movies</h1>
-	<i class="icon ion-ios7-film" ng-click="">
-	</i>
-      </ion-header-bar>
-      <ion-content>
-      
-      </ion-content>
-    </ion-tab>
-      <script id="more-info.html" type="text/ng-template">
-  
-	<div class="modal">
-      
-	  <!-- Modal header bar -->
-	  <ion-header-bar class="bar-secondary">
-	    <h1 class="title">{{movie.MovieTitleClean}}</h1>
-	    <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
-	  </ion-header-bar>
-      
-	  <!-- Modal content area -->
-	  <ion-content>
-      
-	    <form ng-submit="createTask(task)">
-	      <div class="list">
-		<label class="item item-input">
-		  <input type="text" placeholder="What do you need to do?" ng-model="task.title">
-		</label>
+		  <!-- Easy one, need to test use of Magnet Links on Android -->
+		  <a class="item item-icon-left calm" href="{{movie.TorrentMagnetUrl}}">
+		    <i class="icon ion-magnet"></i>
+		    Magnet Link
+		  </a>
 	      </div>
-	      <div class="padding">
-		<button type="submit" class="button button-block button-positive">Create Task</button>
-	      </div>
-	    </form>
+	    </li>
+	  </div>
+	</ion-content>
+      </ion-tab>
       
-	  </ion-content>
+      <!-- Second Tab -->
+      <ion-tab title="Popular">
+	<ion-header-bar class="bar bar-header bar-stable item-icon-left item-icon-right">
+	  <i class="icon ion-ios7-gear"></i>
+	  <h1 class="title">Popular Movies</h1>
+	  <i class="icon ion-ios7-film" ng-click="">
+	  </i>
+	</ion-header-bar>
+	<ion-content>
+	
+	</ion-content>
+      </ion-tab>
       
-	</div>
-      
-      </script>
+      <!-- Third and Last Tab -->
+      <ion-tab title="Something">
+	<ion-header-bar class="bar bar-header bar-stable item-icon-left item-icon-right">
+	  <i class="icon ion-ios7-gear"></i>
+	  <h1 class="title">Popular Movies</h1>
+	  <i class="icon ion-ios7-film" ng-click="">
+	  </i>
+	</ion-header-bar>
+	<ion-content>
+	
+	</ion-content>
+      </ion-tab>
     </ion-tabs>
+    <!-- Modal Script -->
+    <script id="modal-info.html" type="text/ng-template" ng-controller="modalController">
+      
+      <div class="modal">
+	
+	<!-- Header Bar -->
+	<ion-header-bar class="bar-secondary">
+	  <h1 class="title">Movie Info</h1>
+	  <button class="button button-clear button-positive" ng-click="closeModal()">Close</button>
+	</ion-header-bar>
+	
+	<!-- Modal Content -->
+	<ion-content>
+	  <form ng-submit="modalInfo(task)">
+	    <div class="item textarea">
+		      Date: {{movie.DateUploaded}}<br>
+		      Quality: {{movie.Quality}}<br>
+		      Genre: {{movie.Genre}}<br>
+		      Overview: Some Text...<br>
+		      More text that goes here...<br>
+	    </div>
+	  </form>
+	</ion-content>
+      </div>
+    </script>
   </body>
 </html>

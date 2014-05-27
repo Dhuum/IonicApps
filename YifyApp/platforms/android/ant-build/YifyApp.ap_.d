@@ -16,6 +16,7 @@ C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\_where-is-www.tx
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\cordova.js \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\cordova_plugins.js \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\css \
+C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\forms \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\img \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\index.html \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\js \
@@ -26,6 +27,7 @@ C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\css\style.cs
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\img\icon.png \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\img\ionic.png \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\js\app.js \
+C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\js\modal.js \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\lib\ionic \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\lib\ionic\css \
 C:\GitHub\Ionic_Apps\IonicApps\YifyApp\platforms\android\assets\www\lib\ionic\fonts \
