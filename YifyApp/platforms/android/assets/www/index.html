@@ -45,30 +45,32 @@
 		  <h2 class="positive">{{movie.MovieTitleClean}}</h2>
 		  <h3 class="positive">{{movie.MovieYear}}</p>
 		</div>
+		
 		<!-- Descriptive + Image Card #Needs Improving - USE ROWS???? -->
 		<div class="row">
 		  <div class="item item-thumbnail">
 		    <img src="{{movie.CoverImage}}">
 		  </div>
-		    <div class="item textarea">
-		      Date Uploaded: {{movie.DateUploaded}}<br>
-		      Quality: {{movie.Quality}}<br>
-		      Genre: {{movie.Genre}}<br>
-		      Overview: Some Text we need to get from some API from around the world...<br>
-		      More text that goes with the overview of the movie<br>
-		      Moar!<br>
-		      Overview ends here<br>
-			<button class="button button-icon" ng-click="newTask()">
+		  <div class="item textarea">
+		    Date: {{movie.DateUploaded}}<br>
+		    Quality: {{movie.Quality}}<br>
+		    Genre: {{movie.Genre}}<br>
+		    Overview: Some Text...<br>
+		    More text that goes here...<br>
+		   <ion-list>
+		      <ion-item>
+			<button class="button button-icon" ng-click="info(movie)">
 			  <i class="icon ion-android-information"></i>
 			</button>
-			<!-- Download Button -->
-			<button class="button button-icon" ng-click="">
+			<button class="button button-icon" ng-click="download(movie)">
 			  <i class="icon ion-compose"></i>
 			</button>
-			<button class="button button-icon" ng-click="">
+			<button class="button button-icon" ng-click="share(movie)">
 			  <i class="icon ion-android-share"></i>
 			</button>
-		   </div>
+		      </ion-item>
+		    </ion-list>
+		  </div>
 		</div>
 		<!-- Easy one, need to test use of Magnet Links on Android -->
 		<a class="item item-icon-left calm" href="{{movie.TorrentMagnetUrl}}">
