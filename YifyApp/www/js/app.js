@@ -23,6 +23,7 @@ angular.module('yifyApp', ['ionic'])
             alert('Movie Info: ' + result.MovieTitleClean + " \n" + "Year: " + result.MovieYear + " \n" + "Quality: " +
                 result.Quality + " \n" + "Genre: " + result.Genre + "\n" + "Rating: " + result.MovieRating);
         };
+        //Probably needs an INTENT, fails to load because of hosts file blocking ads server
         $scope.download = function (result) {
             window.open(result.MovieUrl);  
         };
