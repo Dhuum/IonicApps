@@ -57,6 +57,19 @@
 		    Genre: {{movie.Genre}}<br>
 		    Overview: Some Text...<br>
 		    More text that goes here...<br>
+		   <ion-list>
+		      <ion-item>
+			<button class="button button-icon" ng-click="info(movie)">
+			  <i class="icon ion-android-information"></i>
+			</button>
+			<button class="button button-icon" ng-click="download(movie)">
+			  <i class="icon ion-compose"></i>
+			</button>
+			<button class="button button-icon" ng-click="share(movie)">
+			  <i class="icon ion-android-share"></i>
+			</button>
+		      </ion-item>
+		    </ion-list>
 		  </div>
 		</div>
 		<!-- Easy one, need to test use of Magnet Links on Android -->
@@ -64,21 +77,6 @@
 		  <i class="icon ion-magnet"></i>
 		  Magnet Link
 		</a>
-	      <ion-list>
-	        <ion-item>
-	        Test WTF
-		  <button class="button-positive">
-		  Test2 <!-- <i class="icon ion-android-information"></i> -->
-		  </button>
-		  <!-- Download Button -->
-		  <button class="button-assertive">
-		  Hai <!-- <i class="icon ion-compose"></i> -->
-		  </button>
-		  <button class="button-positive" ng-click="share(movie)">
-	  	  Share
-	          </button>
-	        </ion-item>
-	      </ion-list>
 	    </div>
 	  </li>
 	</div>
